@@ -1,2 +1,4 @@
 1 . install wishper on locally ( by using git hub)
 2 . download the ffmpeg
+3 . paste the ffmpeg bin into the data , and set asth path for env variables
+4 . select the videos you want 

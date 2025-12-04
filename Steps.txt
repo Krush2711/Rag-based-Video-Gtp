@@ -1,0 +1,2 @@
+1 . install wishper on locally ( by using git hub)
+2 . download the ffmpeg

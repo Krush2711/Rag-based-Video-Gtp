@@ -2,3 +2,5 @@
 2 . download the ffmpeg
 3 . paste the ffmpeg bin into the data , and set asth path for env variables
 4 . select the videos you want 
+5 . convert the videos into the audio by uing ffmpeg
+6 . audio to segments 

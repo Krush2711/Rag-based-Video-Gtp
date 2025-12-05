@@ -1,1 +1,653 @@
-{"chunks": [{"number": "5", "start:": 0.0, "end": 9.0, "text": " So, supervised learning algorithms learn to predict input-output or x-to-y mappings."}, {"number": "5", "start:": 9.0, "end": 12.72, "text": " And in the last video, you saw that regression algorithms,"}, {"number": "5", "start:": 12.72, "end": 15.18, "text": " which is a type of supervised learning algorithm,"}, {"number": "5", "start:": 15.18, "end": 19.96, "text": " learns to predict numbers out of infinitely many possible numbers."}, {"number": "5", "start:": 19.96, "end": 22.04, "text": " There's a second major type of"}, {"number": "5", "start:": 22.04, "end": 25.6, "text": " supervised learning algorithm called a classification algorithm."}, {"number": "5", "start:": 25.6, "end": 28.28, "text": " Let's take a look at what this means."}, {"number": "5", "start:": 28.28, "end": 35.2, "text": " Take breast cancer detection as an example of a classification problem."}, {"number": "5", "start:": 35.2, "end": 37.56, "text": " Say you're building a machine learning system so that"}, {"number": "5", "start:": 37.56, "end": 41.44, "text": " doctors can have a diagnostic tool to detect breast cancer."}, {"number": "5", "start:": 41.44, "end": 46.400000000000006, "text": " This is important because early detection could potentially save a patient's life."}, {"number": "5", "start:": 46.400000000000006, "end": 48.64, "text": " Using a patient's medical records,"}, {"number": "5", "start:": 48.64, "end": 52.42, "text": " your machine learning system tries to figure out if a tumor,"}, {"number": "5", "start:": 52.42, "end": 55.120000000000005, "text": " that is a lump, is malignant,"}, {"number": "5", "start:": 55.120000000000005, "end": 57.42, "text": " meaning cancerous or dangerous,"}, {"number": "5", "start:": 57.42, "end": 61.54, "text": " or if that tumor, that lump, is benign,"}, {"number": "5", "start:": 61.54, "end": 66.7, "text": " meaning that it's just a lump that isn't cancerous and isn't that dangerous."}, {"number": "5", "start:": 66.7, "end": 70.74000000000001, "text": " Some of my friends have actually been working on this specific problem."}, {"number": "5", "start:": 70.74000000000001, "end": 75.62, "text": " So maybe your dataset has tumors of various sizes,"}, {"number": "5", "start:": 75.62, "end": 79.9, "text": " and these tumors are labeled as either benign,"}, {"number": "5", "start:": 79.9, "end": 83.44, "text": " which I will designate in this example with a zero,"}, {"number": "5", "start:": 83.48, "end": 88.48, "text": " or malignant, which I'll designate in this example with a one."}, {"number": "5", "start:": 88.48, "end": 92.4, "text": " You can then plot your data on a graph like this,"}, {"number": "5", "start:": 92.4, "end": 97.03999999999999, "text": " where the horizontal axis represents the size of the tumor,"}, {"number": "5", "start:": 97.03999999999999, "end": 100.52, "text": " and the vertical axis takes on only two values,"}, {"number": "5", "start:": 100.52, "end": 104.72, "text": " zero or one, depending on whether the tumor is benign,"}, {"number": "5", "start:": 104.72, "end": 107.72, "text": " zero, or malignant, one."}, {"number": "5", "start:": 107.72, "end": 113.0, "text": " One reason that this is different from regression,"}, {"number": "5", "start:": 113.0, "end": 119.2, "text": " is that we're trying to predict only a small number of possible outputs or categories."}, {"number": "5", "start:": 119.2, "end": 121.32, "text": " In this case, two possible outputs,"}, {"number": "5", "start:": 121.32, "end": 124.2, "text": " zero or one, benign or malignant."}, {"number": "5", "start:": 124.2, "end": 126.84, "text": " This is different from regression,"}, {"number": "5", "start:": 126.84, "end": 134.2, "text": " which tries to predict any number out of an infinitely many number of possible numbers."}, {"number": "5", "start:": 134.2, "end": 140.96, "text": " So the fact that there are only two possible outputs is what makes this classification."}, {"number": "5", "start:": 140.96, "end": 148.0, "text": " Because there are only two possible outputs or two possible categories in this example,"}, {"number": "5", "start:": 148.0, "end": 152.92000000000002, "text": " you can also plot this dataset on a line like this,"}, {"number": "5", "start:": 152.92000000000002, "end": 158.44, "text": " where now I'm going to use two different symbols to denote the category,"}, {"number": "5", "start:": 158.44, "end": 163.32, "text": " using a circle or an O to denote the benign examples,"}, {"number": "5", "start:": 163.32, "end": 167.68, "text": " and a cross to denote the malignant examples."}, {"number": "5", "start:": 167.68, "end": 171.56, "text": " If a new patient walks in for a diagnosis,"}, {"number": "5", "start:": 171.56, "end": 174.96, "text": " and they have a lump that is this size,"}, {"number": "5", "start:": 174.96, "end": 176.56, "text": " then the question is,"}, {"number": "5", "start:": 176.56, "end": 182.44, "text": " will your system classify this tumor as benign or malignant?"}, {"number": "5", "start:": 182.44, "end": 185.84, "text": " It turns out that in classification problems,"}, {"number": "5", "start:": 185.84, "end": 189.8, "text": " you can also have more than two possible output categories."}, {"number": "5", "start:": 189.8, "end": 192.32, "text": " Maybe your learning algorithm can output"}, {"number": "5", "start:": 192.32, "end": 197.4, "text": " multiple types of cancer diagnoses if it turns out to be malignant."}, {"number": "5", "start:": 197.68, "end": 202.64000000000001, "text": " So let's call two different types of cancer type 1 and type 2."}, {"number": "5", "start:": 202.64000000000001, "end": 210.0, "text": " In this case, the algorithm would have three possible output categories it could predict."}, {"number": "5", "start:": 210.0, "end": 212.72, "text": " And by the way, in classification,"}, {"number": "5", "start:": 212.72, "end": 218.04000000000002, "text": " the terms output classes and output categories are often used interchangeably."}, {"number": "5", "start:": 218.04000000000002, "end": 220.84, "text": " So when I say class or category,"}, {"number": "5", "start:": 220.84, "end": 224.36, "text": " when referring to the output, it means the same thing."}, {"number": "5", "start:": 224.4, "end": 230.64000000000001, "text": " So to summarize, classification algorithms predict categories."}, {"number": "5", "start:": 230.64000000000001, "end": 232.96, "text": " Categories don't have to be numbers."}, {"number": "5", "start:": 232.96, "end": 234.92000000000002, "text": " It could be non-numeric."}, {"number": "5", "start:": 234.92000000000002, "end": 241.64000000000001, "text": " For example, it can predict whether a picture is that of a cat or a dog,"}, {"number": "5", "start:": 241.64000000000001, "end": 246.60000000000002, "text": " and it can predict if a tumor is benign or malignant."}, {"number": "5", "start:": 246.60000000000002, "end": 250.84, "text": " Categories can also be numbers like 0 or 1,"}, {"number": "5", "start:": 250.84, "end": 252.92000000000002, "text": " or 0 or 1 or 2."}, {"number": "5", "start:": 252.95999999999998, "end": 257.64, "text": " But what makes classification different from regression when you're interpreting"}, {"number": "5", "start:": 257.64, "end": 262.44, "text": " the numbers is that classification predicts a small, finite,"}, {"number": "5", "start:": 262.44, "end": 267.47999999999996, "text": " limited set of possible output categories such as 0, 1, and 2,"}, {"number": "5", "start:": 267.47999999999996, "end": 273.68, "text": " but not all possible numbers in between like 0.5 or 1.7."}, {"number": "5", "start:": 273.68, "end": 278.0, "text": " In the example of supervised learning that we've been looking at,"}, {"number": "5", "start:": 278.0, "end": 280.8, "text": " we had only one input value."}, {"number": "5", "start:": 280.8, "end": 284.36, "text": " The size of the tumor."}, {"number": "5", "start:": 284.36, "end": 290.68, "text": " But you can also use more than one input value to predict an output."}, {"number": "5", "start:": 290.68, "end": 295.12, "text": " Here's an example. Instead of just knowing the tumor size,"}, {"number": "5", "start:": 295.12, "end": 299.32, "text": " say you also have each patient's age in years."}, {"number": "5", "start:": 299.32, "end": 304.68, "text": " Your new dataset now has two inputs, age and tumor size."}, {"number": "5", "start:": 304.68, "end": 306.6, "text": " Plotting this new dataset,"}, {"number": "5", "start:": 306.6, "end": 310.88, "text": " we're going to use circles to show patients whose tumors are benign,"}, {"number": "5", "start:": 310.88, "end": 317.20000000000005, "text": " and crosses to show the patients with a tumor that was malignant."}, {"number": "5", "start:": 317.20000000000005, "end": 319.52000000000004, "text": " When a new patient comes in,"}, {"number": "5", "start:": 319.52000000000004, "end": 325.44, "text": " the doctor can measure the patient's tumor size and also record the patient's age."}, {"number": "5", "start:": 325.44, "end": 332.44, "text": " Given this, how can we predict if this patient's tumor is benign or malignant?"}, {"number": "5", "start:": 332.44, "end": 334.64000000000004, "text": " Well, given the dataset like this,"}, {"number": "5", "start:": 334.68, "end": 338.8, "text": " what the learning algorithm might do is find some boundary that"}, {"number": "5", "start:": 338.8, "end": 344.24, "text": " separates out the malignant tumors from the benign ones."}, {"number": "5", "start:": 344.24, "end": 350.2, "text": " The learning algorithm has to decide how to fit a boundary line to this data."}, {"number": "5", "start:": 350.2, "end": 353.12, "text": " The boundary line found by the learning algorithm"}, {"number": "5", "start:": 353.12, "end": 355.68, "text": " would help the doctor with the diagnosis."}, {"number": "5", "start:": 355.68, "end": 360.24, "text": " In this case, the tumor is more likely to be benign."}, {"number": "5", "start:": 360.24, "end": 363.92, "text": " From this example, we've seen how two inputs,"}, {"number": "5", "start:": 363.92, "end": 366.96000000000004, "text": " the patient's age and tumor size can be used."}, {"number": "5", "start:": 366.96000000000004, "end": 369.28000000000003, "text": " In other machine learning problems,"}, {"number": "5", "start:": 369.28000000000003, "end": 373.04, "text": " often many more input values are required."}, {"number": "5", "start:": 373.04, "end": 377.12, "text": " My friends who worked on breast cancer detection use many additional inputs,"}, {"number": "5", "start:": 377.12, "end": 379.28000000000003, "text": " like the thickness of the tumor clump,"}, {"number": "5", "start:": 379.28000000000003, "end": 381.08, "text": " uniformity of the cell size,"}, {"number": "5", "start:": 381.08, "end": 384.44, "text": " uniformity of the cell shape, and so on."}, {"number": "5", "start:": 384.48, "end": 390.64, "text": " To recap, supervised learning maps input X to output Y,"}, {"number": "5", "start:": 390.64, "end": 393.2, "text": " where the learning algorithm learns from the,"}, {"number": "5", "start:": 393.2, "end": 395.36, "text": " quote, right answers."}, {"number": "5", "start:": 395.36, "end": 401.12, "text": " The two major types of supervised learning are regression and classification."}, {"number": "5", "start:": 401.12, "end": 403.15999999999997, "text": " In a regression application,"}, {"number": "5", "start:": 403.15999999999997, "end": 405.24, "text": " like predicting prices of houses,"}, {"number": "5", "start:": 405.24, "end": 407.72, "text": " the learning algorithm has to predict numbers from"}, {"number": "5", "start:": 407.72, "end": 410.64, "text": " infinitely many possible output numbers."}, {"number": "5", "start:": 410.64, "end": 412.32, "text": " Whereas in classification,"}, {"number": "5", "start:": 412.36, "end": 414.76, "text": " the learning algorithm has to make a prediction of"}, {"number": "5", "start:": 414.76, "end": 419.04, "text": " a category out of a small set of possible outputs."}, {"number": "5", "start:": 419.04, "end": 422.04, "text": " You now know what is supervised learning,"}, {"number": "5", "start:": 422.04, "end": 425.32, "text": " including both regression and classification."}, {"number": "5", "start:": 425.32, "end": 427.0, "text": " I hope you're having fun."}, {"number": "5", "start:": 427.0, "end": 432.68, "text": " Next, there's a second major type of machine learning called unsupervised learning."}, {"number": "5", "start:": 432.68, "end": 436.64, "text": " Let's go on to the next video to see what that is."}], "text": " So, supervised learning algorithms learn to predict input-output or x-to-y mappings. And in the last video, you saw that regression algorithms, which is a type of supervised learning algorithm, learns to predict numbers out of infinitely many possible numbers. There's a second major type of supervised learning algorithm called a classification algorithm. Let's take a look at what this means. Take breast cancer detection as an example of a classification problem. Say you're building a machine learning system so that doctors can have a diagnostic tool to detect breast cancer. This is important because early detection could potentially save a patient's life. Using a patient's medical records, your machine learning system tries to figure out if a tumor, that is a lump, is malignant, meaning cancerous or dangerous, or if that tumor, that lump, is benign, meaning that it's just a lump that isn't cancerous and isn't that dangerous. Some of my friends have actually been working on this specific problem. So maybe your dataset has tumors of various sizes, and these tumors are labeled as either benign, which I will designate in this example with a zero, or malignant, which I'll designate in this example with a one. You can then plot your data on a graph like this, where the horizontal axis represents the size of the tumor, and the vertical axis takes on only two values, zero or one, depending on whether the tumor is benign, zero, or malignant, one. One reason that this is different from regression, is that we're trying to predict only a small number of possible outputs or categories. In this case, two possible outputs, zero or one, benign or malignant. This is different from regression, which tries to predict any number out of an infinitely many number of possible numbers. So the fact that there are only two possible outputs is what makes this classification. Because there are only two possible outputs or two possible categories in this example, you can also plot this dataset on a line like this, where now I'm going to use two different symbols to denote the category, using a circle or an O to denote the benign examples, and a cross to denote the malignant examples. If a new patient walks in for a diagnosis, and they have a lump that is this size, then the question is, will your system classify this tumor as benign or malignant? It turns out that in classification problems, you can also have more than two possible output categories. Maybe your learning algorithm can output multiple types of cancer diagnoses if it turns out to be malignant. So let's call two different types of cancer type 1 and type 2. In this case, the algorithm would have three possible output categories it could predict. And by the way, in classification, the terms output classes and output categories are often used interchangeably. So when I say class or category, when referring to the output, it means the same thing. So to summarize, classification algorithms predict categories. Categories don't have to be numbers. It could be non-numeric. For example, it can predict whether a picture is that of a cat or a dog, and it can predict if a tumor is benign or malignant. Categories can also be numbers like 0 or 1, or 0 or 1 or 2. But what makes classification different from regression when you're interpreting the numbers is that classification predicts a small, finite, limited set of possible output categories such as 0, 1, and 2, but not all possible numbers in between like 0.5 or 1.7. In the example of supervised learning that we've been looking at, we had only one input value. The size of the tumor. But you can also use more than one input value to predict an output. Here's an example. Instead of just knowing the tumor size, say you also have each patient's age in years. Your new dataset now has two inputs, age and tumor size. Plotting this new dataset, we're going to use circles to show patients whose tumors are benign, and crosses to show the patients with a tumor that was malignant. When a new patient comes in, the doctor can measure the patient's tumor size and also record the patient's age. Given this, how can we predict if this patient's tumor is benign or malignant? Well, given the dataset like this, what the learning algorithm might do is find some boundary that separates out the malignant tumors from the benign ones. The learning algorithm has to decide how to fit a boundary line to this data. The boundary line found by the learning algorithm would help the doctor with the diagnosis. In this case, the tumor is more likely to be benign. From this example, we've seen how two inputs, the patient's age and tumor size can be used. In other machine learning problems, often many more input values are required. My friends who worked on breast cancer detection use many additional inputs, like the thickness of the tumor clump, uniformity of the cell size, uniformity of the cell shape, and so on. To recap, supervised learning maps input X to output Y, where the learning algorithm learns from the, quote, right answers. The two major types of supervised learning are regression and classification. In a regression application, like predicting prices of houses, the learning algorithm has to predict numbers from infinitely many possible output numbers. Whereas in classification, the learning algorithm has to make a prediction of a category out of a small set of possible outputs. You now know what is supervised learning, including both regression and classification. I hope you're having fun. Next, there's a second major type of machine learning called unsupervised learning. Let's go on to the next video to see what that is."}
+{
+    "chunks": [
+        {
+            "number": "5",
+            "start:": 0.0,
+            "end": 9.0,
+            "text": " So, supervised learning algorithms learn to predict input-output or x-to-y mappings."
+        },
+        {
+            "number": "5",
+            "start:": 9.0,
+            "end": 12.72,
+            "text": " And in the last video, you saw that regression algorithms,"
+        },
+        {
+            "number": "5",
+            "start:": 12.72,
+            "end": 15.18,
+            "text": " which is a type of supervised learning algorithm,"
+        },
+        {
+            "number": "5",
+            "start:": 15.18,
+            "end": 19.96,
+            "text": " learns to predict numbers out of infinitely many possible numbers."
+        },
+        {
+            "number": "5",
+            "start:": 19.96,
+            "end": 22.04,
+            "text": " There's a second major type of"
+        },
+        {
+            "number": "5",
+            "start:": 22.04,
+            "end": 25.6,
+            "text": " supervised learning algorithm called a classification algorithm."
+        },
+        {
+            "number": "5",
+            "start:": 25.6,
+            "end": 28.28,
+            "text": " Let's take a look at what this means."
+        },
+        {
+            "number": "5",
+            "start:": 28.28,
+            "end": 35.2,
+            "text": " Take breast cancer detection as an example of a classification problem."
+        },
+        {
+            "number": "5",
+            "start:": 35.2,
+            "end": 37.56,
+            "text": " Say you're building a machine learning system so that"
+        },
+        {
+            "number": "5",
+            "start:": 37.56,
+            "end": 41.44,
+            "text": " doctors can have a diagnostic tool to detect breast cancer."
+        },
+        {
+            "number": "5",
+            "start:": 41.44,
+            "end": 46.400000000000006,
+            "text": " This is important because early detection could potentially save a patient's life."
+        },
+        {
+            "number": "5",
+            "start:": 46.400000000000006,
+            "end": 48.64,
+            "text": " Using a patient's medical records,"
+        },
+        {
+            "number": "5",
+            "start:": 48.64,
+            "end": 52.42,
+            "text": " your machine learning system tries to figure out if a tumor,"
+        },
+        {
+            "number": "5",
+            "start:": 52.42,
+            "end": 55.120000000000005,
+            "text": " that is a lump, is malignant,"
+        },
+        {
+            "number": "5",
+            "start:": 55.120000000000005,
+            "end": 57.42,
+            "text": " meaning cancerous or dangerous,"
+        },
+        {
+            "number": "5",
+            "start:": 57.42,
+            "end": 61.54,
+            "text": " or if that tumor, that lump, is benign,"
+        },
+        {
+            "number": "5",
+            "start:": 61.54,
+            "end": 66.7,
+            "text": " meaning that it's just a lump that isn't cancerous and isn't that dangerous."
+        },
+        {
+            "number": "5",
+            "start:": 66.7,
+            "end": 70.74000000000001,
+            "text": " Some of my friends have actually been working on this specific problem."
+        },
+        {
+            "number": "5",
+            "start:": 70.74000000000001,
+            "end": 75.62,
+            "text": " So maybe your dataset has tumors of various sizes,"
+        },
+        {
+            "number": "5",
+            "start:": 75.62,
+            "end": 79.9,
+            "text": " and these tumors are labeled as either benign,"
+        },
+        {
+            "number": "5",
+            "start:": 79.9,
+            "end": 83.44,
+            "text": " which I will designate in this example with a zero,"
+        },
+        {
+            "number": "5",
+            "start:": 83.48,
+            "end": 88.48,
+            "text": " or malignant, which I'll designate in this example with a one."
+        },
+        {
+            "number": "5",
+            "start:": 88.48,
+            "end": 92.4,
+            "text": " You can then plot your data on a graph like this,"
+        },
+        {
+            "number": "5",
+            "start:": 92.4,
+            "end": 97.03999999999999,
+            "text": " where the horizontal axis represents the size of the tumor,"
+        },
+        {
+            "number": "5",
+            "start:": 97.03999999999999,
+            "end": 100.52,
+            "text": " and the vertical axis takes on only two values,"
+        },
+        {
+            "number": "5",
+            "start:": 100.52,
+            "end": 104.72,
+            "text": " zero or one, depending on whether the tumor is benign,"
+        },
+        {
+            "number": "5",
+            "start:": 104.72,
+            "end": 107.72,
+            "text": " zero, or malignant, one."
+        },
+        {
+            "number": "5",
+            "start:": 107.72,
+            "end": 113.0,
+            "text": " One reason that this is different from regression,"
+        },
+        {
+            "number": "5",
+            "start:": 113.0,
+            "end": 119.2,
+            "text": " is that we're trying to predict only a small number of possible outputs or categories."
+        },
+        {
+            "number": "5",
+            "start:": 119.2,
+            "end": 121.32,
+            "text": " In this case, two possible outputs,"
+        },
+        {
+            "number": "5",
+            "start:": 121.32,
+            "end": 124.2,
+            "text": " zero or one, benign or malignant."
+        },
+        {
+            "number": "5",
+            "start:": 124.2,
+            "end": 126.84,
+            "text": " This is different from regression,"
+        },
+        {
+            "number": "5",
+            "start:": 126.84,
+            "end": 134.2,
+            "text": " which tries to predict any number out of an infinitely many number of possible numbers."
+        },
+        {
+            "number": "5",
+            "start:": 134.2,
+            "end": 140.96,
+            "text": " So the fact that there are only two possible outputs is what makes this classification."
+        },
+        {
+            "number": "5",
+            "start:": 140.96,
+            "end": 148.0,
+            "text": " Because there are only two possible outputs or two possible categories in this example,"
+        },
+        {
+            "number": "5",
+            "start:": 148.0,
+            "end": 152.92000000000002,
+            "text": " you can also plot this dataset on a line like this,"
+        },
+        {
+            "number": "5",
+            "start:": 152.92000000000002,
+            "end": 158.44,
+            "text": " where now I'm going to use two different symbols to denote the category,"
+        },
+        {
+            "number": "5",
+            "start:": 158.44,
+            "end": 163.32,
+            "text": " using a circle or an O to denote the benign examples,"
+        },
+        {
+            "number": "5",
+            "start:": 163.32,
+            "end": 167.68,
+            "text": " and a cross to denote the malignant examples."
+        },
+        {
+            "number": "5",
+            "start:": 167.68,
+            "end": 171.56,
+            "text": " If a new patient walks in for a diagnosis,"
+        },
+        {
+            "number": "5",
+            "start:": 171.56,
+            "end": 174.96,
+            "text": " and they have a lump that is this size,"
+        },
+        {
+            "number": "5",
+            "start:": 174.96,
+            "end": 176.56,
+            "text": " then the question is,"
+        },
+        {
+            "number": "5",
+            "start:": 176.56,
+            "end": 182.44,
+            "text": " will your system classify this tumor as benign or malignant?"
+        },
+        {
+            "number": "5",
+            "start:": 182.44,
+            "end": 185.84,
+            "text": " It turns out that in classification problems,"
+        },
+        {
+            "number": "5",
+            "start:": 185.84,
+            "end": 189.8,
+            "text": " you can also have more than two possible output categories."
+        },
+        {
+            "number": "5",
+            "start:": 189.8,
+            "end": 192.32,
+            "text": " Maybe your learning algorithm can output"
+        },
+        {
+            "number": "5",
+            "start:": 192.32,
+            "end": 197.4,
+            "text": " multiple types of cancer diagnoses if it turns out to be malignant."
+        },
+        {
+            "number": "5",
+            "start:": 197.68,
+            "end": 202.64000000000001,
+            "text": " So let's call two different types of cancer type 1 and type 2."
+        },
+        {
+            "number": "5",
+            "start:": 202.64000000000001,
+            "end": 210.0,
+            "text": " In this case, the algorithm would have three possible output categories it could predict."
+        },
+        {
+            "number": "5",
+            "start:": 210.0,
+            "end": 212.72,
+            "text": " And by the way, in classification,"
+        },
+        {
+            "number": "5",
+            "start:": 212.72,
+            "end": 218.04000000000002,
+            "text": " the terms output classes and output categories are often used interchangeably."
+        },
+        {
+            "number": "5",
+            "start:": 218.04000000000002,
+            "end": 220.84,
+            "text": " So when I say class or category,"
+        },
+        {
+            "number": "5",
+            "start:": 220.84,
+            "end": 224.36,
+            "text": " when referring to the output, it means the same thing."
+        },
+        {
+            "number": "5",
+            "start:": 224.4,
+            "end": 230.64000000000001,
+            "text": " So to summarize, classification algorithms predict categories."
+        },
+        {
+            "number": "5",
+            "start:": 230.64000000000001,
+            "end": 232.96,
+            "text": " Categories don't have to be numbers."
+        },
+        {
+            "number": "5",
+            "start:": 232.96,
+            "end": 234.92000000000002,
+            "text": " It could be non-numeric."
+        },
+        {
+            "number": "5",
+            "start:": 234.92000000000002,
+            "end": 241.64000000000001,
+            "text": " For example, it can predict whether a picture is that of a cat or a dog,"
+        },
+        {
+            "number": "5",
+            "start:": 241.64000000000001,
+            "end": 246.60000000000002,
+            "text": " and it can predict if a tumor is benign or malignant."
+        },
+        {
+            "number": "5",
+            "start:": 246.60000000000002,
+            "end": 250.84,
+            "text": " Categories can also be numbers like 0 or 1,"
+        },
+        {
+            "number": "5",
+            "start:": 250.84,
+            "end": 252.92000000000002,
+            "text": " or 0 or 1 or 2."
+        },
+        {
+            "number": "5",
+            "start:": 252.95999999999998,
+            "end": 257.64,
+            "text": " But what makes classification different from regression when you're interpreting"
+        },
+        {
+            "number": "5",
+            "start:": 257.64,
+            "end": 262.44,
+            "text": " the numbers is that classification predicts a small, finite,"
+        },
+        {
+            "number": "5",
+            "start:": 262.44,
+            "end": 267.47999999999996,
+            "text": " limited set of possible output categories such as 0, 1, and 2,"
+        },
+        {
+            "number": "5",
+            "start:": 267.47999999999996,
+            "end": 273.68,
+            "text": " but not all possible numbers in between like 0.5 or 1.7."
+        },
+        {
+            "number": "5",
+            "start:": 273.68,
+            "end": 278.0,
+            "text": " In the example of supervised learning that we've been looking at,"
+        },
+        {
+            "number": "5",
+            "start:": 278.0,
+            "end": 280.8,
+            "text": " we had only one input value."
+        },
+        {
+            "number": "5",
+            "start:": 280.8,
+            "end": 284.36,
+            "text": " The size of the tumor."
+        },
+        {
+            "number": "5",
+            "start:": 284.36,
+            "end": 290.68,
+            "text": " But you can also use more than one input value to predict an output."
+        },
+        {
+            "number": "5",
+            "start:": 290.68,
+            "end": 295.12,
+            "text": " Here's an example. Instead of just knowing the tumor size,"
+        },
+        {
+            "number": "5",
+            "start:": 295.12,
+            "end": 299.32,
+            "text": " say you also have each patient's age in years."
+        },
+        {
+            "number": "5",
+            "start:": 299.32,
+            "end": 304.68,
+            "text": " Your new dataset now has two inputs, age and tumor size."
+        },
+        {
+            "number": "5",
+            "start:": 304.68,
+            "end": 306.6,
+            "text": " Plotting this new dataset,"
+        },
+        {
+            "number": "5",
+            "start:": 306.6,
+            "end": 310.88,
+            "text": " we're going to use circles to show patients whose tumors are benign,"
+        },
+        {
+            "number": "5",
+            "start:": 310.88,
+            "end": 317.20000000000005,
+            "text": " and crosses to show the patients with a tumor that was malignant."
+        },
+        {
+            "number": "5",
+            "start:": 317.20000000000005,
+            "end": 319.52000000000004,
+            "text": " When a new patient comes in,"
+        },
+        {
+            "number": "5",
+            "start:": 319.52000000000004,
+            "end": 325.44,
+            "text": " the doctor can measure the patient's tumor size and also record the patient's age."
+        },
+        {
+            "number": "5",
+            "start:": 325.44,
+            "end": 332.44,
+            "text": " Given this, how can we predict if this patient's tumor is benign or malignant?"
+        },
+        {
+            "number": "5",
+            "start:": 332.44,
+            "end": 334.64000000000004,
+            "text": " Well, given the dataset like this,"
+        },
+        {
+            "number": "5",
+            "start:": 334.68,
+            "end": 338.8,
+            "text": " what the learning algorithm might do is find some boundary that"
+        },
+        {
+            "number": "5",
+            "start:": 338.8,
+            "end": 344.24,
+            "text": " separates out the malignant tumors from the benign ones."
+        },
+        {
+            "number": "5",
+            "start:": 344.24,
+            "end": 350.2,
+            "text": " The learning algorithm has to decide how to fit a boundary line to this data."
+        },
+        {
+            "number": "5",
+            "start:": 350.2,
+            "end": 353.12,
+            "text": " The boundary line found by the learning algorithm"
+        },
+        {
+            "number": "5",
+            "start:": 353.12,
+            "end": 355.68,
+            "text": " would help the doctor with the diagnosis."
+        },
+        {
+            "number": "5",
+            "start:": 355.68,
+            "end": 360.24,
+            "text": " In this case, the tumor is more likely to be benign."
+        },
+        {
+            "number": "5",
+            "start:": 360.24,
+            "end": 363.92,
+            "text": " From this example, we've seen how two inputs,"
+        },
+        {
+            "number": "5",
+            "start:": 363.92,
+            "end": 366.96000000000004,
+            "text": " the patient's age and tumor size can be used."
+        },
+        {
+            "number": "5",
+            "start:": 366.96000000000004,
+            "end": 369.28000000000003,
+            "text": " In other machine learning problems,"
+        },
+        {
+            "number": "5",
+            "start:": 369.28000000000003,
+            "end": 373.04,
+            "text": " often many more input values are required."
+        },
+        {
+            "number": "5",
+            "start:": 373.04,
+            "end": 377.12,
+            "text": " My friends who worked on breast cancer detection use many additional inputs,"
+        },
+        {
+            "number": "5",
+            "start:": 377.12,
+            "end": 379.28000000000003,
+            "text": " like the thickness of the tumor clump,"
+        },
+        {
+            "number": "5",
+            "start:": 379.28000000000003,
+            "end": 381.08,
+            "text": " uniformity of the cell size,"
+        },
+        {
+            "number": "5",
+            "start:": 381.08,
+            "end": 384.44,
+            "text": " uniformity of the cell shape, and so on."
+        },
+        {
+            "number": "5",
+            "start:": 384.48,
+            "end": 390.64,
+            "text": " To recap, supervised learning maps input X to output Y,"
+        },
+        {
+            "number": "5",
+            "start:": 390.64,
+            "end": 393.2,
+            "text": " where the learning algorithm learns from the,"
+        },
+        {
+            "number": "5",
+            "start:": 393.2,
+            "end": 395.36,
+            "text": " quote, right answers."
+        },
+        {
+            "number": "5",
+            "start:": 395.36,
+            "end": 401.12,
+            "text": " The two major types of supervised learning are regression and classification."
+        },
+        {
+            "number": "5",
+            "start:": 401.12,
+            "end": 403.15999999999997,
+            "text": " In a regression application,"
+        },
+        {
+            "number": "5",
+            "start:": 403.15999999999997,
+            "end": 405.24,
+            "text": " like predicting prices of houses,"
+        },
+        {
+            "number": "5",
+            "start:": 405.24,
+            "end": 407.72,
+            "text": " the learning algorithm has to predict numbers from"
+        },
+        {
+            "number": "5",
+            "start:": 407.72,
+            "end": 410.64,
+            "text": " infinitely many possible output numbers."
+        },
+        {
+            "number": "5",
+            "start:": 410.64,
+            "end": 412.32,
+            "text": " Whereas in classification,"
+        },
+        {
+            "number": "5",
+            "start:": 412.36,
+            "end": 414.76,
+            "text": " the learning algorithm has to make a prediction of"
+        },
+        {
+            "number": "5",
+            "start:": 414.76,
+            "end": 419.04,
+            "text": " a category out of a small set of possible outputs."
+        },
+        {
+            "number": "5",
+            "start:": 419.04,
+            "end": 422.04,
+            "text": " You now know what is supervised learning,"
+        },
+        {
+            "number": "5",
+            "start:": 422.04,
+            "end": 425.32,
+            "text": " including both regression and classification."
+        },
+        {
+            "number": "5",
+            "start:": 425.32,
+            "end": 427.0,
+            "text": " I hope you're having fun."
+        },
+        {
+            "number": "5",
+            "start:": 427.0,
+            "end": 432.68,
+            "text": " Next, there's a second major type of machine learning called unsupervised learning."
+        },
+        {
+            "number": "5",
+            "start:": 432.68,
+            "end": 436.64,
+            "text": " Let's go on to the next video to see what that is."
+        }
+    ],
+    "text": " So, supervised learning algorithms learn to predict input-output or x-to-y mappings. And in the last video, you saw that regression algorithms, which is a type of supervised learning algorithm, learns to predict numbers out of infinitely many possible numbers. There's a second major type of supervised learning algorithm called a classification algorithm. Let's take a look at what this means. Take breast cancer detection as an example of a classification problem. Say you're building a machine learning system so that doctors can have a diagnostic tool to detect breast cancer. This is important because early detection could potentially save a patient's life. Using a patient's medical records, your machine learning system tries to figure out if a tumor, that is a lump, is malignant, meaning cancerous or dangerous, or if that tumor, that lump, is benign, meaning that it's just a lump that isn't cancerous and isn't that dangerous. Some of my friends have actually been working on this specific problem. So maybe your dataset has tumors of various sizes, and these tumors are labeled as either benign, which I will designate in this example with a zero, or malignant, which I'll designate in this example with a one. You can then plot your data on a graph like this, where the horizontal axis represents the size of the tumor, and the vertical axis takes on only two values, zero or one, depending on whether the tumor is benign, zero, or malignant, one. One reason that this is different from regression, is that we're trying to predict only a small number of possible outputs or categories. In this case, two possible outputs, zero or one, benign or malignant. This is different from regression, which tries to predict any number out of an infinitely many number of possible numbers. So the fact that there are only two possible outputs is what makes this classification. Because there are only two possible outputs or two possible categories in this example, you can also plot this dataset on a line like this, where now I'm going to use two different symbols to denote the category, using a circle or an O to denote the benign examples, and a cross to denote the malignant examples. If a new patient walks in for a diagnosis, and they have a lump that is this size, then the question is, will your system classify this tumor as benign or malignant? It turns out that in classification problems, you can also have more than two possible output categories. Maybe your learning algorithm can output multiple types of cancer diagnoses if it turns out to be malignant. So let's call two different types of cancer type 1 and type 2. In this case, the algorithm would have three possible output categories it could predict. And by the way, in classification, the terms output classes and output categories are often used interchangeably. So when I say class or category, when referring to the output, it means the same thing. So to summarize, classification algorithms predict categories. Categories don't have to be numbers. It could be non-numeric. For example, it can predict whether a picture is that of a cat or a dog, and it can predict if a tumor is benign or malignant. Categories can also be numbers like 0 or 1, or 0 or 1 or 2. But what makes classification different from regression when you're interpreting the numbers is that classification predicts a small, finite, limited set of possible output categories such as 0, 1, and 2, but not all possible numbers in between like 0.5 or 1.7. In the example of supervised learning that we've been looking at, we had only one input value. The size of the tumor. But you can also use more than one input value to predict an output. Here's an example. Instead of just knowing the tumor size, say you also have each patient's age in years. Your new dataset now has two inputs, age and tumor size. Plotting this new dataset, we're going to use circles to show patients whose tumors are benign, and crosses to show the patients with a tumor that was malignant. When a new patient comes in, the doctor can measure the patient's tumor size and also record the patient's age. Given this, how can we predict if this patient's tumor is benign or malignant? Well, given the dataset like this, what the learning algorithm might do is find some boundary that separates out the malignant tumors from the benign ones. The learning algorithm has to decide how to fit a boundary line to this data. The boundary line found by the learning algorithm would help the doctor with the diagnosis. In this case, the tumor is more likely to be benign. From this example, we've seen how two inputs, the patient's age and tumor size can be used. In other machine learning problems, often many more input values are required. My friends who worked on breast cancer detection use many additional inputs, like the thickness of the tumor clump, uniformity of the cell size, uniformity of the cell shape, and so on. To recap, supervised learning maps input X to output Y, where the learning algorithm learns from the, quote, right answers. The two major types of supervised learning are regression and classification. In a regression application, like predicting prices of houses, the learning algorithm has to predict numbers from infinitely many possible output numbers. Whereas in classification, the learning algorithm has to make a prediction of a category out of a small set of possible outputs. You now know what is supervised learning, including both regression and classification. I hope you're having fun. Next, there's a second major type of machine learning called unsupervised learning. Let's go on to the next video to see what that is."
+}

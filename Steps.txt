@@ -4,3 +4,6 @@
 4 . select the videos you want 
 5 . convert the videos into the audio by uing ffmpeg
 6 . audio to segments 
+7 . store segmets in json
+8 . read them in pandas and then convert them into vector data base by using olama model bgm3
+9 . if vector are parllel then both text are similar , if perpnedicular then totally diff cosin sim = 0 

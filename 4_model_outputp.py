@@ -87,13 +87,8 @@ Return only the answer, no reasoning steps.
 """
 
 
-print(most_accurate_df[['number', 'text', 'start:', 'end']])
-
-with open("Promt.txt", "w") as f:
-    f.write(prompt)
-
 Model_responce = inference(prompt)
 print(Model_responce)
 
-with open("responsce .txt", "w") as f:
+with open("responce.txt", "w") as f:
     f.write(Model_responce)

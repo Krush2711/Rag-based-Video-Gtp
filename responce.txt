@@ -1,0 +1,3 @@
+Video number: 1
+Timestamp range: [6.16, 7.84]
+Explanation: The start time is approximately where the user asks about machine learning, and the end time covers the explanation of what machine learning is.

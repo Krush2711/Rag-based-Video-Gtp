@@ -28,7 +28,7 @@ def inference(prompt):
     )
     return r.json()["response"]
 
-df = joblib.load('embeddings.joblib')
+df = joblib.load('New_embeddings.joblib')
 
 user_query = input("Ask a quesstion : ")
 question_embeddings = get_embeddings([user_query])[0]

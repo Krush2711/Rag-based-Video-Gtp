@@ -16,11 +16,11 @@ def get_embeddings(text_list):
 my_chukns = []
 chunk_id = 0
 
-jsons = os.listdir("jsons")
+jsons = os.listdir("newjsons")
 
 
 for json_file in jsons:
-    with open(f"jsons/{json_file}") as f:
+    with open(f"newjsons/{json_file}") as f:
         content = json.load(f)
     print(f"working with {json_file}")
     embeddings = get_embeddings([c['text'] for c in content['chunks']])
@@ -38,7 +38,7 @@ df = pd.DataFrame.from_records(my_chukns)
 # print(df)
 # df.to_csv("cunks_Sample.csv", index=False)
 
-joblib.dump(df, "embeddings.joblib")
+joblib.dump(df, "New_embeddings.joblib")
 # user_query = input("Ask a quesstion : ")
 # question_embeddings = get_embeddings(user_query)[0]
 # print(question_embeddings)

@@ -1,3 +1,8 @@
-Video number: 1
-Timestamp range: [6.16, 7.84]
-Explanation: The start time is approximately where the user asks about machine learning, and the end time covers the explanation of what machine learning is.
+video_number = 1
+start_time = 127.16
+end_time = 144.16
+explanation = "Machine learning is a science of getting computers to learn without being explicitly programmed."
+
+print(f"Video Number: {video_number}")
+print(f"Timestamp Range: {start_time}-{end_time}")
+print(explanation)

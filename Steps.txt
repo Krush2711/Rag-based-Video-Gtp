@@ -9,4 +9,5 @@
 9 . if vector are parllel then both text are similar , if perpnedicular then totally diff cosin sim = 0 
 10 . create the dataframe store the vaules of embedding by using joblib model
 11 . by using value sof the cosing similary find the most appropirte one 
-12 . 
+12 . give this top reseult to LLM 
+13 . 

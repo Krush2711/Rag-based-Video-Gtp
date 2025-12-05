@@ -1,0 +1,15 @@
+Video Number: 1
+Timestamp Range: 6.16-7.84
+Explanation: The video starts with a question about machine learning and is answered shortly after, starting at 6.16 seconds.
+
+Video Number: 3
+Timestamp Range: 0.0-2.60
+Explanation: Although this video does contain some related text, it's not the best match for the answer to "what is machine learning?"
+
+Video Number: 4
+Timestamp Range: 12.00-14.06
+Explanation: This video provides a brief overview of supervised learning and doesn't exactly answer the question but does provide context.
+
+Video Number: 1
+Timestamp Range: 131.36-133.88
+Explanation: Another mention of machine learning, though somewhat unclear due to typo.

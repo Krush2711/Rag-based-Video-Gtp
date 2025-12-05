@@ -57,18 +57,27 @@ Produces clean "VideoGPT-style" response.
 Ask a question: what is machine learning? where it had thought
 
 video_number = 1
+
 start_time = 127.16
+
 end_time   = 144.16
+
 explanation = "Machine learning is a science of getting computers to learn without being explicitly programmed."
 
-✨ Features
+ # ✨ Features
 
 ✔ Converts any video into a Q&A tool
+
 ✔ Searches via embeddings + cosine similarity
+
 ✔ Retrieves exact timestamps
+
 ✔ LLM-powered refined answers
+
 ✔ Well-structured modular pipeline
+
 ✔ Perfect for RAG-based learning apps, chatbot systems, and educational tools
+
 
 # 🔥 Credits
 

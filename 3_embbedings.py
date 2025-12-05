@@ -2,6 +2,8 @@ import requests
 import os 
 import json
 import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+import joblib
 
 def get_embeddings(text_list):
     r = requests.post("http://localhost:11434/api/embed", json={
@@ -22,19 +24,22 @@ for json_file in jsons:
         content = json.load(f)
     print(f"working with {json_file}")
     embeddings = get_embeddings([c['text'] for c in content['chunks']])
-    print(embeddings)
     for i, chunk in enumerate(content['chunks']):
         chunk["chunk_id"] = chunk_id
         chunk_id +=1 
         chunk["embedding"] = embeddings[i]
         my_chukns.append(chunk)
-        
+    
     
 
-# print(my_chukns)
+
 
 df = pd.DataFrame.from_records(my_chukns)
-print(df)
+# print(df)
+# df.to_csv("cunks_Sample.csv", index=False)
 
-# a = get_embeddings("hey there ")
-# print(a)
+joblib.dump(df, "embeddings.joblib")
+# user_query = input("Ask a quesstion : ")
+# question_embeddings = get_embeddings(user_query)[0]
+# print(question_embeddings)
+
